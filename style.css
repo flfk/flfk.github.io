@@ -8,6 +8,7 @@
 
 body {
   /* overflow: hidden; */
+  height: 80px;
   margin: 0px;
   padding: 0px;
 }
@@ -22,72 +23,18 @@ body {
   background-color: #F2F2F2;
 }
 
-.kill {
-  position: fixed;
-  bottom: 90px;
-  right: 5px;
-  height: 15px;
-  width: 15px;
-  z-index: 938090;
-}
-
-.kill:hover {
-  opacity: 0.5;
-  filter: alpha(opacity=50); /* For IE8 and earlier */
-}
-
-.BottomBarTreeIcon {
-  height: 70px;
-  width: 56px;
-  margin: 0px 0px 10px 15px;
-}
-
 .placeholderStats {
-  height: 98px;
+  height: 80px;
   width: 298px;
   display: inline-block;
 }
 
-.banner_728x90 {
-  height: 90px;
-  width: 728px;
+.banner1, .banner2 {
+  height: 60px;
+  width: 468px;
   display: inline-block;
 }
 
 .arbol_hide {
   display: none;
-}
-
-/* Below formats and positions stats */
-
-.treesPlantedNum, .treesPlantedText, .pagesLeftNum, .pagesLeftText {
-  z-index: 938090;
-  position: fixed;
-}
-
-.treesPlantedNum, .pagesLeftNum {
-  height: 60px;
-  bottom: 33px;
-  font-family: 'Quicksand', sans-serif;
-  font-size: 48px;
-  font-weight: medium;
-  color: #00000087;
-}
-
-.treesPlantedText, .pagesLeftText {
-  height: 15px;
-  bottom: 17.5px;
-  font-family: 'Quicksand', sans-serif;
-  font-size: 12px;
-  color: #00000054;
-}
-
-.treesPlantedNum, .treesPlantedText {
-  width: 78px;
-  left: 112px;
-}
-
-.pagesLeftNum, .pagesLeftText {
-  width: 122px;
-  left: 210px;
 }
