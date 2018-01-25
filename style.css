@@ -3,7 +3,7 @@
  */
 
 * {
-  /* border: thin solid red; */
+  border: thin solid red;
 }
 
 body {
@@ -13,7 +13,7 @@ body {
   padding: 0px;
 }
 
-#iframe {
+/* #iframe {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -21,11 +21,11 @@ body {
   z-index: 938089;
   border-top: thin solid #979797;
   background-color: #F2F2F2;
-}
+} */
 
 .placeholderStats {
-  height: 80px;
-  width: 298px;
+  /* height: 80px; */
+  width: 300px;
   display: inline-block;
 }
 
@@ -33,6 +33,13 @@ body {
   height: 60px;
   width: 468px;
   display: inline-block;
+}
+
+.gapBetweenBanners {
+  width: 20px;
+  height: 60px;
+  display: inline-block;
+  border-color: blue;
 }
 
 .arbol_hide {
