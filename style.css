@@ -1,9 +1,6 @@
-/* style file will style the both the iframe created in main.js
- * as well as the toolbar.html itself, which sits in the iframe.
- */
 
 * {
-  /* border: thin solid red; */
+  border: thin solid red;
 }
 
 body {
@@ -21,6 +18,11 @@ body {
   border-top: thin solid #979797;
   background-color: #F2F2F2;
 } */
+
+.bottomBar {
+  /* height: 80px; */
+  display: inline-block;
+}
 
 .placeholderStats {
   height: 60px;
@@ -40,7 +42,7 @@ body {
   display: inline-block;
   border-color: blue;
 }
-
+/*
 .arbol_hide {
   display: none;
-}
+} */
