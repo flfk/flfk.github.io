@@ -7,8 +7,7 @@
 }
 
 body {
-  /* overflow: hidden; */
-  height: 80px;
+  overflow: hidden;
   margin: 0px;
   padding: 0px;
 }
@@ -24,7 +23,7 @@ body {
 } */
 
 .placeholderStats {
-  /* height: 80px; */
+  height: 60px;
   width: 300px;
   display: inline-block;
 }
