@@ -1,6 +1,6 @@
 
 * {
-  border: thin solid red;
+  /* border: thin solid red; */
 }
 
 body {
@@ -20,7 +20,8 @@ body {
 } */
 
 .bottomBar {
-  /* height: 80px; */
+  height: 80px;
+  padding-top: 10px;
   display: inline-block;
 }
 
@@ -40,7 +41,6 @@ body {
   width: 20px;
   height: 60px;
   display: inline-block;
-  border-color: blue;
 }
 /*
 .arbol_hide {
