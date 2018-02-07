@@ -11,6 +11,7 @@ firebase.initializeApp(config);
 
 'use strict';
 
+
 // Login button functionality
 $('#btnLogin').on('click', () => {
     // clear any previous auth error messages
@@ -106,7 +107,7 @@ function incrementTreesPages() {
     let userId = firebase.auth().currentUser.uid;
     let statsRef = firebase.database().ref("users/"+userId+"/user_stats");
 
-    // Get user stats from db
+    // Update user stats in db
     statsRef.once('value', (snapshot) => {
         let pages = snapshot.val().pages_left;
         let trees = snapshot.val().tree_count;
@@ -119,13 +120,17 @@ function incrementTreesPages() {
             pages--;
         }
 
-        // Update user stats in db appropriately
+        // Update in db
         statsRef.update({
             pages_left: pages,
             tree_count: trees
         });
+    });
 
-        // Update display on DOM
+    // All tabs to listen for live-updated stats and display in DOM
+    statsRef.on('value', (snapshot) => {
+        let pages = snapshot.val().pages_left;
+        let trees = snapshot.val().tree_count;
         $('#trees').text(trees+" "+pluralize(trees, "", "planted"));
         $('#pages').text(pages+" "+pluralize(pages,"pages", "to go"));
     });
