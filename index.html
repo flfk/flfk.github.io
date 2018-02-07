@@ -34,34 +34,36 @@
 <body>
   <div class="bottomBar">
     <div class="fixed-top">
-      <div class="d.inline" id="togglers">
-        <!-- <button class="navbar-toggler btn-primary btn-sm mb-2 ml-2 mr-2" id="toggleLogin" type="button" data-toggle="collapse" data-target="#Expand" aria-controls="Expand" aria-expanded="false" aria-label="Toggle navigation">
-                        Login
-                    </button>
-                    <button class="navbar-toggler btn-secondary btn-sm mb-2 ml-2 mr-2" id="toggleSignup" type="button" data-toggle="collapse" data-target="#Expand" aria-controls="Expand" aria-expanded="false" aria-label="Toggle navigation">
-                    Sign up
-                </button> -->
-        <div class="collapse navbar-collapse pull-xs-right justify-content-end d-inline-block" id="Expand">
-          <ul class="navbar-nav mt-2 mt-md-0">
-            <li class="nav-item active">
-              <input type="email" placeholder="Email" id="txtEmail">
-            </li>
-            <li class="nav-item">
-              <input type="password" placeholder="Password" id="txtPassword">
-            </li>
-            <li class="nav-item" data-toggle="collapse" data-target="#loginExpand" aria-controls="loginExpand" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="btn btn-primary btn-sm mb-2 ml-2 mr-2" id="btnLogin">Login</span>
-              <span class="btn btn-secondary btn-sm mb-2 ml-2 mr-2" id="btnSignup">Sign Up</span>
-            </li>
-          </ul>
-        </div>
-        <div id="authError"></div>
+      <!-- <div class="d.inline" id="togglers">
+        <button class="navbar-toggler btn-primary btn-sm mb-2 ml-2 mr-2" id="toggleLogin" type="button" data-toggle="collapse" data-target="#Expand" aria-controls="Expand" aria-expanded="false" aria-label="Toggle navigation">
+                Login
+            </button>
+            <button class="navbar-toggler btn-secondary btn-sm mb-2 ml-2 mr-2" id="toggleSignup" type="button" data-toggle="collapse" data-target="#Expand" aria-controls="Expand" aria-expanded="false" aria-label="Toggle navigation">
+            Sign up
+        </button>
+      </div> -->
+      <div class="" id="userForm">
+        <ul class="navbar-nav mt-2 mt-md-0">
+          <li class="nav-item active">
+            <input type="email" placeholder="Email" id="txtEmail">
+          </li>
+          <li class="nav-item">
+            <input type="password" placeholder="Password" id="txtPassword">
+          </li>
+          <li class="nav-item" data-toggle="collapse" data-target="#loginExpand" aria-controls="loginExpand" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="btn btn-primary btn-sm mb-2 ml-2 mr-2" id="btnLogin">Login</span>
+            <span class="btn btn-secondary btn-sm mb-2 ml-2 mr-2" id="btnSignup">Sign Up</span>
+          </li>
+          <li>
+            <div id="authError"></div>
+          </li>
+        </ul>
       </div>
       <div class="" id="userDisplay">
         <ul class="navbar-nav mt-2 mt-md-0">
           <li class="nav-item">
             <span class="d-inline" id="user"></span>
-            <button class="btn btn-primary btn-action d-none btn-sm mb-2 mr-2 mr-2" id="btnLogout">Logout</button>
+            <button class="btn btn-primary btn-action btn-sm mb-2 mr-2 mr-2 d-none" id="btnLogout">Logout</button>
           </li>
           <li class="nav-item">
             <img src="" alt="">

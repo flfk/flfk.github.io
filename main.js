@@ -43,12 +43,7 @@ $('#btnSignup').on('click', () => {
 // Log out button functionality
 $('#btnLogout').on('click', () => {
     firebase.auth().signOut(); // sign out currently authenticated user
-
-    // clear stats
-    $('#userDisplay').hide();
-    $('#user').empty();
-    $('#trees').empty();
-    $('#pages').empty();
+    //onAuthStateChanged listener handles the logic
 });
 
 
@@ -56,54 +51,34 @@ $('#btnLogout').on('click', () => {
 firebase.auth().onAuthStateChanged(firebaseUser => {
     if (firebaseUser) {
             console.log(firebaseUser);
-            $('#togglers').addClass('d-none');
-            $('#btnLogout').removeClass('d-none');
 
-            // display username and stats
-            $('#userDisplay').show();
-            $('#user').text("Logged in as "+firebaseUser.email);
+            $('#userForm').hide();
 
             // count new page for the user
-            newPageUpdate();
+            incrementTreesPages();
+
+            // prepare stats and username
+            $('#user').text("Logged in as "+firebaseUser.email);
+            $('#btnLogout').removeClass('d-none');
+            // show them
+            $('#userDisplay').show();
     } else {
             console.log("not logged in");
 
-            $('#togglers').removeClass('d-none');
-            $('#btnLogout').addClass('d-none');
+            $('#userForm').show();
 
-            // clear displayed username
+            // hide stats and username
             $('#userDisplay').hide();
+            // clear them
             $('#user').empty();
+            $('#btnLogout').addClass('d-none');
             $('#trees').empty();
             $('#pages').empty();
     }
 });
 
-// Toggler to expand / collapse login div
-$('#toggleLogin').on('click', () => {
-    $('#btnSignup').toggle(); // toggle display: none
-    $('#toggleSignup').toggleClass('invisible'); // toggle visibility: hidden
-
-    // clear any previous auth error messages
-    $('#authError').empty();
-});
 
 
-// Toggler to expand / collapse signup div
-$('#toggleSignup').on('click', () => {
-    $('#btnLogin').toggle(); // toggle display: none
-    $('#toggleLogin').toggleClass('invisible'); // toggle visibility: hidden
-
-    // clear any previous auth error messages
-    $('#authError').empty();
-});
-
-
-// Development button for imitating a page load
-$('#btnPage').on('click', () => {
-    // TODO: delete this
-    newPageUpdate();
-});
 
 /**
  * Initialises a user's data in the Firebase real-time database
@@ -126,7 +101,7 @@ function initializeUserInDb(email) {
 /**
  * New page logic for updating Firebase db and DOM
  */
-function newPageUpdate() {
+function incrementTreesPages() {
     // Get db path to user stats
     let userId = firebase.auth().currentUser.uid;
     let statsRef = firebase.database().ref("users/"+userId+"/user_stats");
@@ -159,10 +134,10 @@ function newPageUpdate() {
 /**
  * Formats strings correctly according to plurality i.e. 0 trees, 1 tree, 2 trees
  *
- * @param  {number} number [description]
- * @param  {string} units  [description]
- * @param  {string} end    [description]
- * @return {string}        [description]
+ * @param  {number} number integer representing quantity
+ * @param  {string} units  the plural units e.g. "cats"
+ * @param  {string} end    phrase to add at the end
+ * @return {string}        correctly formatted string for regular verbs
  */
 function pluralize (number, units, end) {
     if (number == 1) {
