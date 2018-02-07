@@ -45,7 +45,8 @@ $('#btnLogout').on('click', () => {
     firebase.auth().signOut(); // sign out currently authenticated user
 
     // clear stats
-    $('#trees').parent().parent().hide();
+    $('#userDisplay').hide();
+    $('#user').empty();
     $('#trees').empty();
     $('#pages').empty();
 });
@@ -58,13 +59,12 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
             $('#togglers').addClass('d-none');
             $('#btnLogout').removeClass('d-none');
 
+            // display username and stats
+            $('#userDisplay').show();
+            $('#user').text("Logged in as "+firebaseUser.email);
+
             // count new page for the user
             newPageUpdate();
-
-            // display username and stats
-            $('#userDisplay').parent().show();
-            $('#userDisplay').text("Logged in as "+firebaseUser.email);
-            $('#trees').parent().parent().show();
     } else {
             console.log("not logged in");
 
@@ -72,11 +72,8 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
             $('#btnLogout').addClass('d-none');
 
             // clear displayed username
-            $('#userDisplay').parent().hide();
-            $('#userDisplay').empty();
-
-            // clear stats
-            $('#trees').parent().parent().hide();
+            $('#userDisplay').hide();
+            $('#user').empty();
             $('#trees').empty();
             $('#pages').empty();
     }
