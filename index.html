@@ -1,50 +1,101 @@
 <!DOCTYPE html>
 <html>
-  <head>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+<head>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112401612-1"></script>
   <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'UA-112401612-1');
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-112401612-1');
   </script>
 
   <!-- PropellerAdsMeta -->
   <meta name="propeller" content="fbfa874c7b2605d4b4c139b5f1888f85">
 
-    <meta charset="utf-8">
-    <title> Arbol Bar </title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Quicksand" rel="stylesheet">
+  <meta charset="utf-8">
+  <title> Arbol Bar </title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Quicksand" rel="stylesheet">
 
-  </head>
-  <body>
-    <div class="bottomBar">
-      <div class="placeholderStats"></div>
-      <div class="banner1">
-        <script data-cfasync='false' type='text/javascript' src='//p268184.clksite.com/adServe/banners?tid=268184_517605_0'></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <div class="bottomBar">
+    <div class="fixed-top">
+      <!-- <div class="d.inline" id="togglers">
+        <button class="navbar-toggler btn-primary btn-sm mb-2 ml-2 mr-2" id="toggleLogin" type="button" data-toggle="collapse" data-target="#Expand" aria-controls="Expand" aria-expanded="false" aria-label="Toggle navigation">
+                Login
+            </button>
+            <button class="navbar-toggler btn-secondary btn-sm mb-2 ml-2 mr-2" id="toggleSignup" type="button" data-toggle="collapse" data-target="#Expand" aria-controls="Expand" aria-expanded="false" aria-label="Toggle navigation">
+            Sign up
+        </button>
+      </div> -->
+      <div class="" id="userForm">
+        <ul class="navbar-nav mt-2 mt-md-0">
+          <li class="nav-item active">
+            <input type="email" placeholder="Email" id="txtEmail">
+          </li>
+          <li class="nav-item">
+            <input type="password" placeholder="Password" id="txtPassword">
+          </li>
+          <li class="nav-item" data-toggle="collapse" data-target="#loginExpand" aria-controls="loginExpand" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="btn btn-primary btn-sm mb-2 ml-2 mr-2" id="btnLogin">Login</span>
+            <span class="btn btn-secondary btn-sm mb-2 ml-2 mr-2" id="btnSignup">Sign Up</span>
+          </li>
+          <li>
+            <div id="authError"></div>
+          </li>
+        </ul>
       </div>
-      <!-- <img src="images/banner_468x60.gif" alt="banner2" class="banner1"> -->
-      <div class="gapBetweenBanners"></div>
-      <div class="banner2">
-        <script data-cfasync='false' type='text/javascript' src='//p268184.clksite.com/adServe/banners?tid=268184_517605_3'></script>
+      <div class="" id="userDisplay">
+        <ul class="navbar-nav mt-2 mt-md-0">
+          <li class="nav-item">
+            <span class="d-inline" id="user"></span>
+            <button class="btn btn-primary btn-action btn-sm mb-2 mr-2 mr-2 d-none" id="btnLogout">Logout</button>
+          </li>
+          <li class="nav-item">
+            <img src="" alt="">
+            <span id="trees"></span>
+            <img src="" alt="">
+            <span id="pages"></span>
+          </li>
+        </ul>
       </div>
-      <!-- <img src="images/banner_468x60.gif" alt="banner2" class="banner2"> -->
     </div>
-    <div class="contentArbolBar">
-      <div class="disclaimer">
-        <h4>Note, that all ad revenue collected from this website will be donated to plant trees.</h4>
-      </div>
-      <div class="headerText">
-        <h1>Welcome to the Arbol Bar</h1>
-        <h3>Advice on how to live greener</h3>
-      </div>
-      <div class="BlogPost1">
-          <h2>Blog Post #1 - Eating Greener</h2>
-          <h5>Green Eats is an app to help you track your food related emissions</h3>
+    <div class="placeholderStats"></div>
+    <div class="banner banner1">
+      <script data-cfasync='false' type='text/javascript' src='//p268184.clksite.com/adServe/banners?tid=268184_517605_0'></script>
+    </div>
+    <!-- <img src="images/banner_468x60.gif" alt="banner2" class="banner1"> -->
+    <div class="gapBetweenBanners"></div>
+    <div class="banner banner2">
+      <script data-cfasync='false' type='text/javascript' src='//p268184.clksite.com/adServe/banners?tid=268184_517605_3'></script>
+    </div>
+    <!-- <img src="images/banner_468x60.gif" alt="banner2" class="banner2"> -->
+  </div>
+  <div class="contentArbolBar">
+    <div class="disclaimer">
+      <h4>Note, that all ad revenue collected from this website will be donated to plant trees.</h4>
+    </div>
+    <div class="headerText">
+      <h1>Welcome to the Arbol Bar</h1>
+      <h3>Advice on how to live greener</h3>
+    </div>
+    <div class="BlogPost1">
+      <h2>Blog Post #1 - Eating Greener</h2>
+      <h5>Green Eats is an app to help you track your food related emissions</h3>
           <p>Climate change is one of the greatest challenges of our time. To remain within our planet’s boundaries, we must make a transition to more sustainable choices in all areas of life.</p>
           <p>The food we eat is one of these areas. Food related emissions make up around 18% of annual global greenhouse gas emissions. Their source is varied. Agricultural practices like farming animals which release significant amounts of methane is one example. Deforestation for farming is another.</p>
           <p>Different food choices have different resource requirements. This app gives you the ability to explore the emissions required to produce each of your meals. You can then explore how different choices would affect your environmental footprint.</p>
@@ -54,5 +105,7 @@
           <a href="https://itunes.apple.com/au/app/green-eats/id1289058358?mt=8" style="display:inline-block;overflow:hidden;background:url(https://linkmaker.itunes.apple.com/assets/shared/badges/en-us/appstore-lrg.svg) no-repeat;width:135px;height:40px;background-size:contain;"></a>
       </div>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>
