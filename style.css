@@ -5,6 +5,7 @@
 
 body {
   overflow: hidden;
+  font-family: 'Quicksand', sans-serif;
 }
 
 h1 {
@@ -86,6 +87,24 @@ p {
   height: 60px;
   width: 300px;
   display: inline-block;
+}
+
+.forestly_icon {
+  height: 60px;
+  width: 60px;
+}
+
+#trees_num, #pages_num {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 24px;
+  font-weight: medium;
+  color: #00000087;
+}
+
+#trees_units, #pages_units {
+  font-family: 'Open-Sans', sans-serif;
+  font-size: 10px;
+  color: #00000054;
 }
 
 .banner1, .banner2 {
