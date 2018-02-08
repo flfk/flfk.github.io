@@ -21,27 +21,19 @@
 
   <meta charset="utf-8">
   <title> Arbol Bar </title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Quicksand" rel="stylesheet">
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Quicksand" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <div class="bottomBar">
     <div class="fixed-top">
-      <!-- <div class="d.inline" id="togglers">
-        <button class="navbar-toggler btn-primary btn-sm mb-2 ml-2 mr-2" id="toggleLogin" type="button" data-toggle="collapse" data-target="#Expand" aria-controls="Expand" aria-expanded="false" aria-label="Toggle navigation">
-                Login
-            </button>
-            <button class="navbar-toggler btn-secondary btn-sm mb-2 ml-2 mr-2" id="toggleSignup" type="button" data-toggle="collapse" data-target="#Expand" aria-controls="Expand" aria-expanded="false" aria-label="Toggle navigation">
-            Sign up
-        </button>
-      </div> -->
       <div class="" id="userForm">
         <ul class="navbar-nav mt-2 mt-md-0">
           <li class="nav-item active">
@@ -57,17 +49,27 @@
           </li>
         </ul>
       </div>
-      <div class="" id="userDisplay">
+      <div id="userDisplay" class="d-none">
         <ul class="navbar-nav mt-2 mt-md-0">
           <li class="nav-item">
             <span class="d-inline" id="user"></span>
-            <button class="btn btn-primary btn-action btn-sm mb-2 mr-2 mr-2 d-none" id="btnLogout">Logout</button>
+            <button class="btn btn-primary btn-action btn-sm mb-2 mr-2 mr-2" id="btnLogout">Logout</button>
           </li>
-          <li class="nav-item">
-            <img src="" alt="">
-            <span id="trees"></span>
-            <img src="" alt="">
-            <span id="pages"></span>
+          <li class="row">
+            <div class="ml-4">
+              <img id="trees_icon" class="forestly_icon align-top mr-2">
+              <div class="d-inline-block">
+                <span id="trees_num" class="d-block"></span>
+                <span id="trees_units" class="d-block"></span>
+              </div>
+            </div>
+            <div class="ml-4">
+              <img id="pages_icon" class="forestly_icon align-top mr-2">
+              <div class="d-inline-block">
+                <span id="pages_num" class="d-block"></span>
+                <span id="pages_units" class="d-block"></span>
+              </div>
+            </div>
           </li>
         </ul>
       </div>

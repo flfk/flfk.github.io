@@ -58,21 +58,19 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
             // count new page for the user
             incrementTreesPages();
 
-            // prepare stats and username
+            // prepare username
             $('#user').text("Logged in as "+firebaseUser.email);
-            $('#btnLogout').removeClass('d-none');
-            // show them
-            $('#userDisplay').show();
+            // show username and stats
+            $('#userDisplay').removeClass('d-none');
     } else {
             console.log("not logged in");
 
             $('#userForm').show();
 
             // hide stats and username
-            $('#userDisplay').hide();
+            $('#userDisplay').addClass('d-none');
             // clear them
             $('#user').empty();
-            $('#btnLogout').addClass('d-none');
             $('#trees').empty();
             $('#pages').empty();
     }
@@ -131,8 +129,12 @@ function incrementTreesPages() {
     statsRef.on('value', (snapshot) => {
         let pages = snapshot.val().pages_left;
         let trees = snapshot.val().tree_count;
-        $('#trees').text(trees+" "+pluralize(trees, "", "planted"));
-        $('#pages').text(pages+" "+pluralize(pages,"pages", "to go"));
+        $('#trees_num').text(trees);
+        $('#pages_num').text(pages);
+        $('#trees_units').text(pluralize(trees, "", "planted"));
+        $('#pages_units').text(pluralize(pages,"pages", "to go"));
+        $('#trees_icon').attr('src', 'images/TreesPlantedIcon.png');
+        $('#pages_icon').attr('src', selectPagesLeftIcon(pages));
     });
 }
 
@@ -149,4 +151,46 @@ function pluralize (number, units, end) {
         units = units.slice(0, -1); // slice off the s at the end of the word
     }
     return units+" "+end;
+}
+
+
+
+function selectPagesLeftIcon (pagesLeftNum) {
+  let progressImgURL = "";
+  if (pagesLeftNum > 93){
+    progressImgURL = 'images/Animation1.png';
+  } else if (pagesLeftNum > 87){
+    progressImgURL = 'images/Animation2.png';
+  } else if (pagesLeftNum > 81){
+    progressImgURL = 'images/Animation3.png';
+  } else if (pagesLeftNum > 75){
+    progressImgURL = 'images/Animation4.png';
+  } else if (pagesLeftNum > 68){
+    progressImgURL = 'images/Animation5.png';
+  } else if (pagesLeftNum > 62){
+    progressImgURL = 'images/Animation6.png';
+  } else if (pagesLeftNum > 56){
+    progressImgURL = 'images/Animation7.png';
+  } else if (pagesLeftNum > 50){
+    progressImgURL = 'images/Animation8.png';
+  } else if (pagesLeftNum > 44){
+    progressImgURL = 'images/Animation9.png';
+  } else if (pagesLeftNum > 37){
+    progressImgURL = 'images/Animation10.png';
+  } else if (pagesLeftNum > 31){
+    progressImgURL = 'images/Animation11.png';
+  } else if (pagesLeftNum > 25){
+    progressImgURL = 'images/Animation12.png';
+  } else if (pagesLeftNum > 19){
+    progressImgURL = 'images/Animation13.png';
+  } else if (pagesLeftNum > 13){
+    progressImgURL = 'images/Animation14.png';
+  } else if (pagesLeftNum > 7){
+    progressImgURL = 'images/Animation15.png';
+  } else if (pagesLeftNum > 1){
+    progressImgURL = 'images/Animation16.png';
+  } else {
+    progressImgURL = 'images/Animation17.png';
+  }
+  return progressImgURL;
 }
