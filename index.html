@@ -34,7 +34,7 @@
 <body>
   <div class="bottomBar">
     <div class="fixed-top">
-      <div class="" id="userForm">
+      <div id="userForm" class="d-none">
         <ul class="navbar-nav mt-2 mt-md-0">
           <li class="nav-item active">
             <input type="email" placeholder="Email" id="txtEmail">
@@ -51,10 +51,6 @@
       </div>
       <div id="userDisplay" class="d-none">
         <ul class="navbar-nav mt-2 mt-md-0">
-          <li class="nav-item">
-            <span class="d-inline" id="user"></span>
-            <button class="btn btn-primary btn-action btn-sm" id="btnLogout">Logout</button>
-          </li>
           <li class="row">
             <div class="ml-4">
               <img id="trees_icon" class="forestly_icon align-top mr-2">
@@ -70,6 +66,10 @@
                 <span id="pages_units" class="d-block"></span>
               </div>
             </div>
+          </li>
+          <li class="nav-item">
+            <span class="d-inline" id="user"></span>
+            <button class="btn btn-primary btn-action btn-sm" id="btnLogout">Logout</button>
           </li>
         </ul>
       </div>

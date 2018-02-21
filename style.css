@@ -94,6 +94,15 @@ p {
   width: 50px;
 }
 
+#user, #btnLogout {
+  font-size: 0.75rem;
+  padding: 0 0.25rem;
+}
+
+#btnLogout {
+  padding: 0.125rem 0.25rem;
+}
+
 #trees_num, #pages_num {
   font-family: 'Quicksand', sans-serif;
   font-size: 24px;

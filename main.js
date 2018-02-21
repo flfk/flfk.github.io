@@ -53,7 +53,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     if (firebaseUser) {
             console.log(firebaseUser);
 
-            $('#userForm').hide();
+            $('#userForm').addClass('d-none');
 
             // count new page for the user
             incrementTreesPages();
@@ -65,7 +65,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     } else {
             console.log("not logged in");
 
-            $('#userForm').show();
+            $('#userForm').removeClass('d-none');
 
             // hide stats and username
             $('#userDisplay').addClass('d-none');
